@@ -3,6 +3,7 @@ package es.upm.aled.lectoresyescritores;
 public class RecursoCompartido {
 	private int valor=0;
 	
+
 	// Lectura sincronizada:
 	public synchronized int leer() {
 		System.out.println("Leemos el valor actual " + valor);

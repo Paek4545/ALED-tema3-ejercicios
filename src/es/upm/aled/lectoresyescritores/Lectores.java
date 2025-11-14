@@ -1,5 +1,6 @@
 package es.upm.aled.lectoresyescritores;
 
+
 public class Lectores extends Thread {
 	private final RecursoCompartido recurso;
 	
@@ -12,5 +13,4 @@ public class Lectores extends Thread {
 		// Leemos el recurso
 		recurso.leer();
 	}
-	
 }
