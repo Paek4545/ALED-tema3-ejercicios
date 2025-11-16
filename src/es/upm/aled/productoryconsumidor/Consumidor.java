@@ -14,7 +14,6 @@ public class Consumidor extends Thread {
 	    public void run() {
 	        while (true) {
 	            buffer.consumir();
-	            // Ya se imprime dentro de consumir()
 	            try {
 	                Thread.sleep(random.nextInt(500));
 	            } catch (InterruptedException e) {

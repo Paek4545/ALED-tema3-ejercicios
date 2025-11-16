@@ -18,6 +18,7 @@ public class Buffer {
         // Pinemos en el buffer el dato que vamos a introducir
         buffer[in] = dato;
         System.out.println(Thread.currentThread().getName() + " produce: " + dato);
+        // Recorremos el array
         in = (in + 1) % buffer.length;
         count++;
         notifyAll(); // Despertar consumidores
@@ -35,6 +36,7 @@ public class Buffer {
 
         int dato = buffer[out];
         System.out.println(Thread.currentThread().getName() + " consume: " + dato);
+        // Recorremos el array
         out = (out + 1) % buffer.length;
         count--;
         notifyAll(); // Despertar productores
