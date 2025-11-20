@@ -5,18 +5,20 @@ import java.util.Random;
 public class Escritores extends Thread{
 	// Recurso compartido de Escritores y Lectores
 		private final RecursoCompartido recursos;
-		private final Random random = new Random();
+		private final int id;
 		
-		public Escritores(RecursoCompartido recursos) {
+		public Escritores(RecursoCompartido recursos, int id) {
 			this.recursos = recursos;
-
+			this.id = id;
 		}
 		
 		@Override
 		public void run() {
-			// Nos creamos el valor nuevo entre 0 y 1000 que va a sustituir al valor actual
-			int valorNuevo = random.nextInt(1001);
-			recursos.escribir(valorNuevo);
+			try {
+				recursos.escribir(id);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	
 }

@@ -48,7 +48,7 @@ public class Marmita {
 	public synchronized void rellenar() {
 		// En este caso se espera hasta que un caníbal avise que esté vacía
 		try {
-			while(!avisado) {
+			while(!avisado || raciones > 0 ) {
 				wait();	
 			}
 			System.out.println("El cocinero está rellenando la marmita...");
